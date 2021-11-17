@@ -1,8 +1,16 @@
 // ==================================================
 // DEFINE FUNCTION(S)
 // ==================================================
-function calc() {
+function sum(num1, num2) {
+  if(arguments.length == 0) return 0; 
+  else if(typeof num2 === 'undefined') return num1;
+  else return num1 + num2;
+}
 
+function calc(operation, num1, num2) {
+  switch(operation){
+    case 'add': return sum(num1, num2);
+  }
 }
 
 // ==================================================
