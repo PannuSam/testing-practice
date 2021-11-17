@@ -2,7 +2,8 @@
 // DEFINE FUNCTION(S)
 // ==================================================
 function difference(num1, num2) {
-  if(typeof num2 === 'undefined') return num1;
+  if(arguments.length == 0) return 0; 
+  else if(typeof num2 === 'undefined') return num1;
   else return num1 - num2;
 }
 
@@ -33,6 +34,8 @@ try {
   // Test Case 4
   // --------------------------------------------------
   // When invoked with no numbers, it should return 0.
+  var result = difference();
+  if (result !== 0) throw new Error('Expected difference() to be 0. Received: ' + result);
 
   console.log('All tests passed successfully.');
 
