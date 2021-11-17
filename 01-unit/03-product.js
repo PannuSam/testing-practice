@@ -2,7 +2,8 @@
 // DEFINE FUNCTION(S)
 // ==================================================
 function product(num1, num2) {
-  return num1 * num2;
+  if(typeof num2 === 'undefined') return num1;
+  else return num1 * num2;
 }
 
 // ==================================================
@@ -32,7 +33,8 @@ try {
   // Test Case 4
   // --------------------------------------------------
   // When invoked with only 1 number, it should return that number.
-
+  var result = product(2);
+  if (result !== 2) throw new Error('Expected product(2) to be 2. Received: ' + result);
   // --------------------------------------------------
   // Test Case 5
   // --------------------------------------------------
