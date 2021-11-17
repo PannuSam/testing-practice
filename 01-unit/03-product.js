@@ -2,7 +2,8 @@
 // DEFINE FUNCTION(S)
 // ==================================================
 function product(num1, num2) {
-  if(typeof num2 === 'undefined') return num1;
+  if(arguments.length == 0) return 0; 
+  else if(typeof num2 === 'undefined') return num1;
   else return num1 * num2;
 }
 
@@ -39,7 +40,9 @@ try {
   // Test Case 5
   // --------------------------------------------------
   // When invoked with no numbers, it should return 0.
-
+  var result = product();
+  if (result !== 0) throw new Error('Expected product() to be 0. Received: ' + result);
+  
   console.log('All tests passed successfully.');
 
 // ==================================================
