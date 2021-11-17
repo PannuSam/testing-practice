@@ -19,11 +19,19 @@ function product(num1, num2) {
   else return num1 * num2;
 }
 
+function quotient(num1, num2) {
+  if (num2 == 0) return "ERROR";
+  else if(arguments.length == 0) return 0; 
+  else if (typeof num2 === 'undefined') return num1;
+  else return num1 / num2;
+}
+
 function calc(operation, num1, num2) {
   switch(operation){
     case 'add': return sum(num1, num2);
     case 'subtract': return difference(num1, num2);
     case 'multiply': return product(num1, num2);
+    case 'divide': return quotient(num1, num2);
   }
 }
 
@@ -54,7 +62,8 @@ try {
   // Test Case 4
   // --------------------------------------------------
   // It should return the correct quotient when the user provides: 'divide', 9, 3.
-
+  var result = calc('divide', 9, 3);
+  if (result !== 3) throw new Error('Expected calc("divide", 9, 3) to be 3. Received: ' + result);
   // --------------------------------------------------
   // Test Case 5
   // --------------------------------------------------
